@@ -1,8 +1,8 @@
 /* Vocravox website. No frameworks, no web fonts, no third-party requests: it loads fast and works under a
    strict Content-Security-Policy (see _headers). The look is the app's: frosted lavender glass, an indigo gloss,
-   a cyan highlight. Light by default; dark follows the visitor's system setting. */
+   a cyan highlight. Always light, whatever the visitor's system setting. */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   --bg: #f3f1ff;
   --fg: #1b1747;
   --muted: #5f5c93;
@@ -23,27 +23,6 @@
   --radius: 22px;
   --ease: cubic-bezier(0.32, 0.72, 0, 1);
   --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0f1233;
-    --fg: #eef0ff;
-    --muted: #a9acd9;
-    --primary: #8b88ff;
-    --primary-soft: rgba(139, 136, 255, 0.14);
-    --card: rgba(255, 255, 255, 0.06);
-    --card-strong: rgba(255, 255, 255, 0.1);
-    --line: rgba(255, 255, 255, 0.11);
-    --glass-edge: rgba(255, 255, 255, 0.14);
-    --shadow-card: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 20px 44px -22px rgba(0, 0, 0, 0.7);
-    --shadow-lift: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 28px 54px -22px rgba(0, 0, 0, 0.8);
-    --canvas:
-      radial-gradient(900px 620px at 8% -8%, rgba(99, 102, 241, 0.34), transparent 62%),
-      radial-gradient(820px 560px at 100% 2%, rgba(56, 189, 248, 0.15), transparent 62%),
-      radial-gradient(760px 640px at 55% 112%, rgba(124, 92, 246, 0.26), transparent 62%),
-      linear-gradient(180deg, #0f1233, #0a0c26);
-  }
 }
 
 *, *::before, *::after { box-sizing: border-box; }
