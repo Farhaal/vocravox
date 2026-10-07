@@ -11,7 +11,7 @@
 
 <p align="center">
   <b>Turn your voiceover into a ready-to-edit video.</b><br/>
-  A matching clip for every line, cut to the exact length of your words, ready for any editor.
+  Premium AI and a purpose-built matching engine, perfectly synced and ready for any editor.
 </p>
 
 <p align="center">
@@ -33,20 +33,22 @@
 
 ## What it does
 
-1. **Upload your voiceover**: your own voice or any AI voice.
-2. **Vocravox builds the video**: it listens to every word, understands what your script is about,
-   and finds a matching stock clip or real photo for each line.
-3. **Export to your editor**: numbered clips already cut to your narration, plus captions, for
-   CapCut, DaVinci Resolve, Premiere Pro or any other editor.
+1. **Bring your voiceover**: your own voice or any AI voice.
+2. **Vocravox builds the project**: its matching engine and premium AI models understand your story,
+   check every picture for accuracy and keep everything in sync.
+3. **Finish in your editor**: a tidy project folder for CapCut, DaVinci Resolve, Premiere Pro or any
+   other editor.
 
 A 30 to 60 second voiceover is a good first try. Half-hour narrations work too.
 
 ## Why creators use it
 
-- **Clips that fit the story.** It reads your whole script first, so a line about a winter blackout
-  gets snow and dark streets, not outer space.
-- **Perfect timing.** Every cut lands on the word it belongs to, because timing comes from your real voice.
-- **Real photos of real things.** Named people, places and events get real, freely licensed photos.
+- **Visual accuracy.** Premium AI models judge the picture itself, not just its tags, so what you see
+  fits what you say.
+- **In sync, everywhere.** Footage, captions and credits are numbered and timed to your narration in
+  every folder of the export, so nothing drifts.
+- **Real people, real places.** Public figures, places and events in your script appear with real,
+  freely licensed photos.
 - **Commercial-use footage.** Clips and photos come only from sources whose licenses allow commercial
   use, with a credits file ready for your video description.
 - **No repeated footage.** Clips are not reused across the video, and the opening gets the best picks.

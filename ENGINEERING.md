@@ -33,36 +33,40 @@ the exact length of the words it covers, and hands the result to the editor the 
 
 ```mermaid
 flowchart LR
-    A[Voiceover] --> B[Listen: word-level timing]
-    B --> C[Group words into scenes<br/>by pacing section]
-    C --> D[Understand the script:<br/>theme, then search terms]
-    D --> E[Search all stock sources<br/>in parallel]
-    E --> F[Pick the best clip per line<br/>no repeats]
-    F --> G[Cut to length, start at the<br/>best moment]
-    G --> H[Timeline file<br/>validated against a schema]
-    H --> I[Export: numbered clips,<br/>captions, editor timeline, credits]
+    A[Voiceover] --> B[Word-level timing]
+    B --> C[Pacing and scenes]
+    C --> D[Understanding<br/>the story]
+    D --> E[Footage search<br/>across licensed sources]
+    E --> F[Judging and<br/>assignment]
+    F --> G[Cutting]
+    G --> H[Validated timeline]
+    H --> I[Export for any editor]
 ```
 
-1. **Listen.** The audio is transcribed locally with word-level timestamps. These timings are the single source
-   of truth for everything that follows: nothing is ever timed from the script.
-2. **Scenes.** Words are grouped into scenes. Cut length depends on where the line sits in the video (best,
-   better, good and tail sections get different pacing) and on the pace the user picked.
-3. **Understand.** One call to an AI provider (the user's own free key) writes a theme for the whole script, then
-   search terms are written in batches of 20 lines with that theme in view. Without an AI key it falls back to
-   local keyword extraction, so a video is always produced.
-4. **Search.** Every scene is searched across the stock libraries in parallel, with per-source quota tracking,
-   automatic failover when a source rate-limits, and a search cache.
-5. **Judge.** Candidate frames are scored on the user's own computer against what the line should show, the
-   video's theme, and things to avoid (watermarks, on-screen text, people talking to camera). Clips are then
-   assigned in timeline order so nothing repeats and the opening gets first pick.
-6. **Cut.** Only the winners are downloaded (about 1080p). Each video starts at its best-matching moment, and in
-   the closing section unused windows of already-downloaded clips are reused under no-loop rules.
-7. **Timeline.** A complete `timeline.json` is produced and validated against a JSON Schema.
-8. **Export.** Clips are pre-cut to contiguous lengths that add up to the narration, so dropping them into an
+Premium AI models do the perceptual work; the engine around them decides what to do with it. In outline:
+
+1. **Timing.** The audio is processed locally into word-level timestamps. These timings are the single source of
+   truth for everything that follows: nothing is ever timed from the script.
+2. **Pacing.** Words are grouped into scenes. Cut length depends on where the line sits in the video and on the
+   pace the user picked.
+3. **Understanding.** The whole script is read before any footage is chosen, so every later decision is made
+   in the context of the story. With no AI key available, a local fallback keeps the video coming.
+4. **Search and judging.** Licensed sources are searched in parallel, with quota tracking and automatic failover.
+   Candidates are then judged on the user's own computer for how well the picture itself fits the line, and
+   assigned in order so nothing repeats and the opening gets first pick.
+5. **Cutting.** Only the winners are downloaded. Each starts at its best moment, and unused material is reused
+   under rules that avoid visible loops.
+6. **Timeline.** A complete timeline document is produced and validated against a JSON Schema.
+7. **Export.** Clips are pre-cut to contiguous lengths that add up to the narration, so dropping them into an
    editor in number order lines up with the voice with no manual trimming. Captions, a ready-built editor
    timeline, a credits file and an optional zip complete the folder.
 
-Named people, places and events get real, freely licensed photos instead of generic footage.
+Public figures, places and events named in a script get real, freely licensed photos instead of generic footage.
+
+**What is original here.** The models are premium, pre-trained ones, used as components. The engine around them
+is original work: the pacing logic, the story understanding, the judging and assignment rules, the cutting and
+reuse rules, the timeline contract, the measured export, and the setup and update system described below. That
+engine, and the reliability it adds, is what the rest of this page is about.
 
 ## Architecture
 
