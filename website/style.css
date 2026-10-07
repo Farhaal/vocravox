@@ -2,7 +2,7 @@
    strict Content-Security-Policy (see _headers). The look is the app's: frosted lavender glass, an indigo gloss,
    a cyan highlight. Always light, whatever the visitor's system setting. */
 :root {
-  color-scheme: light;
+  color-scheme: only light;   /* "only": browsers must not force a dark version of this page */
   --bg: #f3f1ff;
   --fg: #1b1747;
   --muted: #5f5c93;
