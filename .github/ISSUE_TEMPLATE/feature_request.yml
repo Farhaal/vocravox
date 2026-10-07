@@ -1,0 +1,11 @@
+name: Idea or feature request
+description: Suggest something that would make the app better
+labels: [idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+      description: Describe the problem you want solved, and how you'd like it to work.
+    validations:
+      required: true

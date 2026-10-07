@@ -1,0 +1,35 @@
+name: Bug report
+description: Something doesn't work as expected
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for reporting! Never paste your API keys here.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics
+      description: In the app, open Help and click "Copy diagnostics", then paste here (keys are removed automatically).
+      render: text
+  - type: dropdown
+    id: os
+    attributes:
+      label: Computer
+      options:
+        - Windows with NVIDIA graphics
+        - Windows without NVIDIA graphics
+        - Mac (Apple Silicon)
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Shown at the bottom of the sidebar, for example 0.9.0
