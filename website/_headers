@@ -8,3 +8,9 @@
 
 /assets/*
   Cache-Control: public, max-age=604800
+
+/style.css
+  Cache-Control: no-cache
+
+/app.js
+  Cache-Control: no-cache
