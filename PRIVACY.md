@@ -24,4 +24,4 @@ Vocravox never sends your audio, your keys, or your files to us.
 
 ## Questions
 
-Email [support@vocravox.com](mailto:support@vocravox.com) or open an issue on the [support page](https://github.com/Farhaal/vocravox/issues).
+Email [support@vocravox.com](mailto:support@vocravox.com).

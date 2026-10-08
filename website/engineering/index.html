@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How it is built | Vocravox</title>
+  <meta name="description" content="How Vocravox turns a voiceover into a synced video project, how it stays reliable, and the numbers behind it. Built and maintained by one developer." />
+  <link rel="canonical" href="https://vocravox.com/engineering/" />
+  <meta name="color-scheme" content="only light" />
+  <meta name="theme-color" content="#f3f1ff" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="wrap bar">
+      <a class="brand" href="/" aria-label="Vocravox home"><img src="/assets/logo-128.png" width="32" height="32" alt="" /><span>Vocravox</span></a>
+      <nav aria-label="Main">
+        <a href="/help/">Help</a>
+        <a href="/engineering/" aria-current="page">How it is built</a>
+      </nav>
+      <a class="btn btn-small" id="dl-header" href="https://github.com/Farhaal/vocravox/releases/latest">Download</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap">
+      <h1>How Vocravox<br /><span class="grad">is built.</span></h1>
+      <p class="lead">A desktop product that runs entirely on your computer, designed and engineered by one developer. Here is what is inside, and how well it holds up.</p>
+    </section>
+
+    <section class="sec wrap" aria-labelledby="h-flow">
+      <div class="sec-head reveal">
+        <h2 id="h-flow">From voice to timeline</h2>
+        <p>Seven steps, each one built for accuracy first.</p>
+      </div>
+      <ol class="flow">
+        <li class="card step reveal"><span class="num">1</span><h3>Timing</h3><p>Word-by-word timestamps from your real voice. Nothing is ever timed from the script.</p></li>
+        <li class="card step reveal"><span class="num">2</span><h3>Pacing</h3><p>Words become scenes. Cut length follows where the line sits and the pace you choose.</p></li>
+        <li class="card step reveal"><span class="num">3</span><h3>Understanding</h3><p>The whole script is read first, so every pick fits the story, not just a keyword.</p></li>
+        <li class="card step reveal"><span class="num">4</span><h3>Search</h3><p>Licensed libraries searched in parallel, with automatic failover when one is busy.</p></li>
+        <li class="card step reveal"><span class="num">5</span><h3>Judging</h3><p>Candidates are judged on your computer for how well the picture itself fits the line.</p></li>
+        <li class="card step reveal"><span class="num">6</span><h3>Cutting</h3><p>Each clip starts at its best moment and is cut to the exact length of its words.</p></li>
+        <li class="card step reveal"><span class="num">7</span><h3>Export</h3><p>Numbered clips, captions, a ready-made editor timeline and a credits file.</p></li>
+        <li class="card step step-note reveal"><h3>Original engine</h3><p>Premium AI models do the perceptual work. The engine around them is original work: pacing, story understanding, judging, cutting and the timeline itself.</p></li>
+      </ol>
+    </section>
+
+    <section class="sec wrap" aria-labelledby="h-speed">
+      <div class="sec-head reveal">
+        <h2 id="h-speed">Measured, not guessed</h2>
+        <p>The fastest way to export depends on the computer. So Vocravox times the real work on yours, once, and uses what is actually fastest there.</p>
+      </div>
+      <div class="card chart reveal">
+        <div class="chart-row"><span class="chart-label">Graphics chip, the old first choice</span><span class="track"><span class="fill w-100"></span></span><span class="chart-value">47 s</span></div>
+        <div class="chart-row"><span class="chart-label">Processor</span><span class="track"><span class="fill w-62"></span></span><span class="chart-value">29 s</span></div>
+        <div class="chart-row chart-best"><span class="chart-label">Measured choice</span><span class="track"><span class="fill w-45"></span></span><span class="chart-value">21 s</span></div>
+        <p class="chart-note">Exporting 60 clips on the development PC. Starting an encoder has a cost and clips are short, so the &ldquo;obvious&rdquo; choice lost.</p>
+      </div>
+    </section>
+
+    <section class="sec wrap" aria-labelledby="h-solid">
+      <div class="sec-head reveal">
+        <h2 id="h-solid">Built to keep going</h2>
+        <p>Most of the effort goes into what happens when something goes wrong.</p>
+      </div>
+      <div class="grid2">
+        <article class="card reveal"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h4l3-7 3 14 3-7h3"/></svg></span><h3>Falls back, never stops</h3><p>A clip that fails one way moves to the next, and the last resort always works. A failing part never costs you the export.</p></article>
+        <article class="card reveal"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><h3>Recovers on hard computers</h3><p>If security software holds the video tool up, the app switches to a gentler mode by itself, or tells you exactly what to allow.</p></article>
+        <article class="card reveal"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></span><h3>Never fakes success</h3><p>Every clip is checked. Real progress, time left and a Cancel button; problems are counted and reported, not hidden.</p></article>
+        <article class="card reveal"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v10m0 0l-4-4m4 4l4-4M5 19h14"/></svg></span><h3>Setup that never repeats</h3><p>Models download once, resume after an interruption, and are never fetched again on an update or reinstall.</p></article>
+      </div>
+    </section>
+
+    <section class="sec wrap" aria-label="By the numbers">
+      <ul class="stats reveal">
+        <li><strong>250+</strong><span>automated tests, run on every change</span></li>
+        <li><strong>4</strong><span>stock sources, commercial-use licences only</span></li>
+        <li><strong>0</strong><span>accounts, servers or subscriptions</span></li>
+        <li><strong>1</strong><span>developer, start to finish</span></li>
+      </ul>
+    </section>
+
+    <section class="sec wrap" aria-labelledby="h-private">
+      <div class="card panel reveal">
+        <h2 id="h-private">Private by design</h2>
+        <p>Your audio, keys and projects stay on your computer. Only search words go to the stock libraries, and your script&rsquo;s text goes to the AI provider you turn on. Read the <a href="/privacy/">privacy page</a>.</p>
+      </div>
+    </section>
+
+    <section class="sec wrap" aria-labelledby="h-next">
+      <div class="sec-head reveal">
+        <h2 id="h-next">Honest about what is next</h2>
+      </div>
+      <div class="grid2">
+        <article class="card reveal"><h3>Script to video</h3><p>Coming soon, with natural voices. For now, upload your voiceover: it gives the best result anyway.</p></article>
+        <article class="card reveal"><h3>Mac</h3><p>Planned for Apple Silicon.</p></article>
+        <article class="card reveal"><h3>Signed installer</h3><p>Windows may say &ldquo;protected your PC&rdquo; on first run until the certificate arrives. The <a href="/help/">help page</a> shows the two clicks.</p></article>
+        <article class="card reveal"><h3>Reopen old projects</h3><p>Exports are kept on disk. Reopening a past project for editing comes next.</p></article>
+      </div>
+      <p class="meta closing">Questions or feedback? <a href="mailto:support@vocravox.com">support@vocravox.com</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>&copy; 2026 Farhaal. All rights reserved.</span>
+      <nav aria-label="Footer"><a href="/help/">Help</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="mailto:support@vocravox.com">Support</a></nav>
+    </div>
+  </footer>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

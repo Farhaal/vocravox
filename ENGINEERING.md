@@ -88,9 +88,9 @@ Electron shell ──starts──▶ local engine (Python, FastAPI) ◀──HTT
 
 ## Decisions that shaped it
 
-**Audio first.** Timing comes from the real voice, word by word. Text-to-speech scripts are supported but
-labelled "test only", because replacing the voice later would break the sync. Protecting the sync is the
-product's core promise.
+**Audio first.** Timing comes from the real voice, word by word. Script-to-video is deliberately held back
+("coming soon") until it can ship with natural voices, because a robotic placeholder voice is not the quality
+bar and replacing a voice later would break the sync. Protecting the sync is the product's core promise.
 
 **Relevance over speed.** A fast video with wrong clips is worthless. Time is spent where it improves the match
 (theme understanding, frame scoring, de-duplication) and saved elsewhere (parallel search, downloading only
@@ -134,6 +134,11 @@ exact progress, resume after an interruption and no second download on reinstall
 
 Most of the engineering effort goes into what happens when things go wrong.
 
+- **A held-up video tool is detected and handled.** On start-up the engine asks the video tool for half a second
+  of nothing. If it does not answer, it retries one thread at a time (security software can hang a tool that
+  starts many threads) and runs in that safe mode; if even that fails, the Create page says so up front with the
+  folders to allow and a Check again button, and an export stops in seconds with the same advice instead of
+  grinding through hundreds of timeouts.
 - **A failing encoder never costs the export.** A clip that fails on one encoder moves to the next in the ranked
   list; an encoder that fails twice is dropped for the session; the last resort always works. Failures are logged
   with the toolkit's own message instead of being discarded.
@@ -169,7 +174,7 @@ Most of the engineering effort goes into what happens when things go wrong.
 
 ## Quality engineering
 
-- **Tests at every layer.** 225 backend tests, 12 frontend tests and 7 desktop-shell tests. Export tests run a
+- **Tests at every layer.** 257 backend tests, 12 frontend tests and 7 desktop-shell tests. Export tests run a
   real video toolkit on real clips and check the output files, not mocks.
 - **Continuous integration.** Every push runs, on a clean Linux machine: the lock-file consistency check, a
   frozen install of exact dependency versions, lint, and the full test suite; and for the interface: install,
@@ -196,7 +201,7 @@ Most of the engineering effort goes into what happens when things go wrong.
 | | |
 |---|---|
 | Source and tests | about 13,000 lines (engine 5,900, engine tests 4,400, interface 2,200, desktop shell 900) |
-| Automated tests | 244 (225 engine, 12 interface, 7 shell) |
+| Automated tests | 276 (257 engine, 12 interface, 7 shell) |
 | History | 116 commits since 13 September 2026, built and maintained by one developer |
 | Installer | about 180 MB; first-run downloads 1 to 6.6 GB depending on the computer and Full or Lite |
 | Export of 60 clips | 21 s on the development PC, down from 47 s |
@@ -209,6 +214,7 @@ Honest list:
 
 - **Code signing.** The installer is not signed yet, so Windows shows "Windows protected your PC" on first run
   (choose More info, then Run anyway). A certificate comes before a wide launch.
+- **Script to video.** Held back until it can ship with natural voices; today only voiceover uploads start a project.
 - **Mac.** Planned for Apple Silicon; not built yet.
 - **Reopening an old project.** Exports are kept on disk, but the app cannot yet reopen a past job for editing.
 - **Visual verification by an online AI** is optional and off by default because free tiers rate-limit.
