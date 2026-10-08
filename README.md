@@ -109,7 +109,8 @@ fastest option, and how setup downloads are resumable and never repeated.
 **Which editors work?** Any. The export is a folder of numbered clips, your narration and captions.
 DaVinci Resolve and Premiere Pro can also import a ready-built timeline.
 
-**Where do the clips come from?** Pexels, Pixabay, Openverse and Wikimedia Commons, filtered to licenses
+**Where do the clips come from?** Pexels, Pixabay, Openverse and Wikimedia Commons, plus Wikipedia and NASA's
+image library for real photos of named people, places and events, filtered to licenses
 that allow commercial use. See `CREDITS.txt` in every export.
 
 **What leaves my computer?** Only search words (to the stock libraries) and your script's text (to the AI

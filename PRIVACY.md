@@ -12,7 +12,7 @@ Vocravox runs on your own computer. There is no account and no tracking.
 
 | What | Sent to | Why |
 |---|---|---|
-| Search words for each line | The stock libraries you use (Pexels, Pixabay, Openverse, Wikimedia) | To find footage |
+| Search words for each line, and the names of the main people, places and events in your script | The free footage and photo libraries (Pexels, Pixabay, Openverse, Wikimedia, Wikipedia, NASA) | To find footage and real photos |
 | The text of your script | The AI providers you turn on (for example Google Gemini or Groq) | To understand the topic and write searches |
 | A check for new versions | The download page on GitHub | To offer updates |
 

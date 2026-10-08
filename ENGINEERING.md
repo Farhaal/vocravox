@@ -174,7 +174,7 @@ Most of the engineering effort goes into what happens when things go wrong.
 
 ## Quality engineering
 
-- **Tests at every layer.** 257 backend tests, 12 frontend tests and 7 desktop-shell tests. Export tests run a
+- **Tests at every layer.** 325 backend tests, 14 frontend tests and 7 desktop-shell tests. Export tests run a
   real video toolkit on real clips and check the output files, not mocks.
 - **Continuous integration.** Every push runs, on a clean Linux machine: the lock-file consistency check, a
   frozen install of exact dependency versions, lint, and the full test suite; and for the interface: install,
@@ -201,11 +201,11 @@ Most of the engineering effort goes into what happens when things go wrong.
 | | |
 |---|---|
 | Source and tests | about 13,000 lines (engine 5,900, engine tests 4,400, interface 2,200, desktop shell 900) |
-| Automated tests | 276 (257 engine, 12 interface, 7 shell) |
+| Automated tests | 346 (325 engine, 14 interface, 7 shell) |
 | History | 116 commits since 13 September 2026, built and maintained by one developer |
 | Installer | about 180 MB; first-run downloads 1 to 6.6 GB depending on the computer and Full or Lite |
 | Export of 60 clips | 21 s on the development PC, down from 47 s |
-| Stock sources | 4, filtered to commercial-use licences |
+| Free sources | 5 (plus Wikipedia for real photos), filtered to commercial-use licences |
 | Platforms | Windows today; Mac (Apple Silicon) planned |
 
 ## What is not done yet
