@@ -45,6 +45,26 @@
     });
   }
 
+  // ---------- demo video: a glass play button, native controls once it is playing ----------
+  // Without this script the <video> keeps its own controls, so the clip still plays.
+  function demo() {
+    var v = $('demo-video');
+    if (!v) return;
+    var shell = v.parentNode;                    // .video-shell
+    var btn = shell.querySelector('.video-play');
+    if (!btn) return;
+    v.removeAttribute('controls');               // script is here: show the custom affordance first
+    shell.classList.add('enhanced');
+    var start = function () {
+      v.setAttribute('controls', '');
+      shell.classList.add('playing');
+      var p = v.play();
+      if (p && p.catch) p.catch(function () { /* a blocked play just leaves the controls showing */ });
+    };
+    btn.addEventListener('click', start);
+    v.addEventListener('play', function () { shell.classList.add('playing'); });
+  }
+
   // ---------- platform ----------
   function platform() {
     var ua = (navigator.userAgent || '').toLowerCase();
@@ -154,6 +174,7 @@
 
   function init() {
     effects();
+    demo();
     var p = platform();
     render({ platform: p, release: null });           // sensible text immediately
     if (p === 'mobile' || p === 'mac') return;        // nothing to look up

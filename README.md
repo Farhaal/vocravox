@@ -110,7 +110,8 @@ fastest option, and how setup downloads are resumable and never repeated.
 DaVinci Resolve and Premiere Pro can also import a ready-built timeline.
 
 **Where do the clips come from?** Pexels, Pixabay, Openverse and Wikimedia Commons, plus Wikipedia and NASA's
-image library for real photos of named people, places and events, filtered to licenses
+image library for real photos of named people, places and events (and the Smithsonian and Europeana, if you add
+their free keys), filtered to licenses
 that allow commercial use. See `CREDITS.txt` in every export.
 
 **What leaves my computer?** Only search words (to the stock libraries) and your script's text (to the AI

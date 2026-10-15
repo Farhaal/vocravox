@@ -23,7 +23,7 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preload" as="image" href="/assets/shot-editor.webp" type="image/webp" fetchpriority="high" />
-  <link rel="stylesheet" href="/style.css?v=ae311e0d" />
+  <link rel="stylesheet" href="/style.css?v=0ef95b08" />
 
   <script type="application/ld+json">
   {
@@ -40,6 +40,7 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <div class="orbs" aria-hidden="true"><i></i><i></i><i></i></div>
 
   <header class="site-header" id="top">
     <div class="wrap bar">
@@ -81,6 +82,36 @@
       <article class="card reveal"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4"/></svg></span><h3>In sync, everywhere</h3><p>Clips, captions and credits, timed to your voice.</p></article>
       <article class="card reveal"><span class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><h3>Private and free</h3><p>Runs on your computer. No account.</p></article>
     </section>
+
+    <section class="demo wrap" aria-labelledby="demo-h">
+      <div class="act-head reveal">
+        <span class="chip">In motion</span>
+        <h2 id="demo-h">See it work.</h2>
+        <p>Our very first test export: footage chosen and timed to the voice, nothing placed by hand. Every update since has made it faster and sharper.</p>
+      </div>
+
+      <figure class="demo-figure reveal">
+        <div class="frame video-frame">
+          <div class="video-shell">
+            <video id="demo-video" preload="none" playsinline controls
+                   poster="/assets/first-test-poster.webp" width="1280" height="720"
+                   aria-label="Vocravox first test export: a voiceover with matching footage on every line.">
+              <source src="/assets/first-test.mp4" type="video/mp4" />
+              <p class="video-fallback">Your browser can&rsquo;t play this clip. <a href="/assets/first-test.mp4">Download it instead</a>.</p>
+            </video>
+            <button class="video-play" type="button" aria-label="Play the demo">
+              <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M8 5.14v13.72c0 .83.9 1.34 1.6.9l10.77-6.86a1.06 1.06 0 0 0 0-1.81L9.6 4.24A1.06 1.06 0 0 0 8 5.14z"/></svg>
+            </button>
+          </div>
+        </div>
+        <figcaption class="video-cap">First public test &middot; exported on a PC with a dedicated graphics card</figcaption>
+      </figure>
+
+      <p class="gpu-note reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M8 21h8M12 18v3M7.5 9h5M7.5 12h3"/></svg>
+        <span>For the fastest exports and the sharpest preview, a <strong>dedicated graphics card is recommended</strong>. Vocravox still runs on computers without one.</span>
+      </p>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -95,6 +126,6 @@
     </div>
   </footer>
 
-  <script src="/app.js?v=0fd44544" defer></script>
+  <script src="/app.js?v=448aaad8" defer></script>
 </body>
 </html>
